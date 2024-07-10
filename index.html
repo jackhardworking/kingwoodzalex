@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>30秒让你理解所有马来西亚的房地产项目</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+</head>
+<body>
+    <header>
+        <h1>Bukit Jalil 最火红项目</h1>
+        <h3> <span class ="underline" >Kingzwood Bukit Jalil</span>由知名发展商 <span class ="underline" >EXSIM</span> 打造，先已拥有<span class ="highlight" >70%的住户下单 !</span></h3>
+    </header>
+    <main>
+        <button id="fixedRegisterButton" class="fixed-register-button">
+            马上注册！获取E-Book再免费送您价值 RM 58,000的免费家私
+        </button>
+        <section id="feedback">
+            <div class="video-overlay">
+                <h2>来听听买家对这个项目的反馈</h2>
+                <div class="video-container">
+                    <iframe src="source/intro.mp4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+        <section id="hero-content">
+            <div class="overlay new-overlay">
+                <button id="downloadButton" class="new-download-button" onclick="showForm()">.<br></button>
+                <div class="additional-info">
+                    <h2 data-aos="fade-in">为什么选择这个项目？</h2>
+                    <p data-aos="fade-in">&#9654; 步行到 <span class="highlight">Pavilion Bukit Jalil 和 Awam Besar LRT Station </span> !</p>
+                    <p data-aos="fade-in">&#9654; 拥有<span class="underline">一房，二房和三房</span>供你选择 ! （不是Studio !!）</p>
+                    <p data-aos="fade-in">&#9654; 唯一一个拥有<span class="highlight">私人通道</span>，直达店面的项目 ！</p>
+                </div>
+            </div>
+        </section>
+        <section id="location">
+            <div class="map-container">
+                <h2 data-aos="fade-in">Location</h2>
+                <iframe data-aos="fade-in" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.133672238146!2d101.66995937472984!3d3.058894096916861!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc4bb00ea7fdb5%3A0xefa5618632a13120!2sKingswood%20Bukit%20Jalil%20Exsim!5e0!3m2!1szh-CN!2smy!4v1719661090500!5m2!1szh-CN!2smy" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+        <section id="gallery">
+            <div class="gallery-container">
+                <h2 data-aos="fade-in">Gallery</h2>
+                <div class="gallery-images">
+                    <img data-aos="fade-in" src="source/gallery1.jpg" alt="Gallery Image 1">
+                    <img data-aos="fade-in" src="source/gallery2.jpg" alt="Gallery Image 2">
+                    <img data-aos="fade-in" src="source/gallery3.jpg" alt="Gallery Image 3">
+                    <img data-aos="fade-in" src="source/gallery4.jpg" alt="Gallery Image 4">
+                    <img data-aos="fade-in" src="source/gallery5.jpg" alt="Gallery Image 5">
+                    <img data-aos="fade-in" src="source/gallery6.jpg" alt="Gallery Image 6">
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="social-media">
+            <h2>My Social Media</h2>
+            <div class="social-links">
+                <a href="https://facebook.com" target="_blank">
+                    <img src="source/fb.png" alt="Facebook">
+                    Jackk
+                </a>
+                <a href="https://instagram.com" target="_blank">
+                    <img src="source/ig.png" alt="Instagram">
+                    Jack
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; Jack 房地产资料下载. 版权所有.</p>
+        </div>
+    </footer>
+
+    <!-- 弹出表单 -->
+    <div id="form-popup" class="form-popup">
+        <form id="infoForm" class="form-container" method="POST" action="submit_to_csv.php">
+            <h2>请填写以下信息以下载PDF</h2>
+            <label for="name"><b>姓名</b></label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email"><b>邮箱</b></label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="phone"><b>手机号</b></label>
+            <input type="text" id="phone" name="phone" required>
+            
+            <label for="consent">
+                <input type="checkbox" id="consent" name="consent" checked>
+                我同意将这些信息发送给您，以了解更多的详情。
+            </label>
+
+            <button type="submit" class="btn">提交</button>
+            <button type="button" class="btn cancel" onclick="closeForm()">取消</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+    AOS.init({
+        duration: 1000,
+        once: false, // 让动画在每次滚动到视图时都触发 /* data-aos="fade-in" */
+    });
+    </script>
+
+</body>
+</html>

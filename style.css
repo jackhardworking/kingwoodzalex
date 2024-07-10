@@ -1,0 +1,344 @@
+/* 基本设置 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('source/background.JPG');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow-x: hidden; /* 禁止水平滚动 */
+}
+
+/* 头部样式 */
+header {
+    background-color: #bc804d;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* 主要内容样式 */
+main {
+    flex: 1; /* 使main部分撑开剩余空间 */
+    padding: 1rem;
+}
+
+/* 固定位置的注册按钮样式 */
+.fixed-register-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 15px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #9d442a;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1000;
+    animation: pulse 1.5s infinite;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.fixed-register-button:hover {
+    transform: scale(1.1);
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+#feedback {
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.video-overlay {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px; /*白框大小*/
+    border-radius: 10px; /*圆角*/
+    text-align: center;
+    font-size: 20px;
+}
+
+/* 确保整个视频容器和视频的样式 */
+.video-container {
+    position: relative;
+    background-color: white; /* 设置背景为白色 */
+    overflow: hidden;
+    width: 100%; /* 确保宽度100% */
+    padding-top: 177.78%; /* 9:16 aspect ratio */
+    border: none; /* 去掉边框 */
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 确保视频覆盖整个容器 */
+    background-color: white; /* 设置背景为白色 */
+}
+
+/* 针对桌面设备的调整 */
+@media (min-width: 768px) {
+    .video-container {
+        width: 100%; /* 确保宽度100% */
+        padding-top: 56.25%; /* 16:9 aspect ratio for wider screens */
+    }
+
+    .video-container iframe {
+        object-fit: cover; /* 确保视频覆盖整个容器 */
+    }
+}
+
+
+
+#hero-content {
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.new-overlay {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    animation: fadeIn 2s ease-in-out; /* 新的动画效果 */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.new-download-button {
+    padding: 80px 150px;
+    cursor: pointer;
+    background: url('source/download.jpg');
+    background-size: 100%;
+    border: none;
+    background-repeat: no-repeat;
+    animation: shake 1s infinite; /* 新的动画效果 */
+}
+
+@keyframes shake {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(0);
+    }
+    40% {
+        transform: translateX(-20px);
+    }
+    60% {
+        transform: translateX(20px);
+    }
+}
+
+/* 额外信息样式 */
+.additional-info {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #333;
+    text-align: left;
+    font-size: 20px;
+}
+
+.map-container {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    box-sizing: border-box;
+}
+
+.additional-info p {
+    margin: 10px 0;
+    font-size: 15px;
+}
+
+.gallery-container {
+    width: 100%;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    box-sizing: border-box;
+    margin-top: 20px;
+}
+
+.gallery-images {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.gallery-images img {
+    max-width: 100%;
+    height: auto; /* 保持图片比例 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 弹出表单样式 */
+.form-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9;
+    background-color: rgba(213, 213, 213, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 90%;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-container h2 {
+    margin-bottom: 1rem;
+}
+
+.form-container label {
+    margin-bottom: 0.5rem;
+}
+
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="checkbox"] {
+    width: 95%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-container input[type="checkbox"] {
+    width: auto;
+    margin-right: 0.5rem;
+}
+
+.form-container .btn {
+    padding: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.form-container .btn.submit {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.form-container .btn.cancel {
+    background-color: #f44336;
+    color: white;
+}
+
+/* 底部样式 */
+footer {
+    background-color: rgba(198, 255, 242, 0.7);
+    color: #000000;
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+    width: 100%;
+}
+
+.social-media h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+/* 高亮显示文字的样式 */
+.highlight {
+    background-color: yellow; /* 可以根据喜好更改颜色 */
+    font-weight: bold;
+    color: red; /* 可以根据喜好更改颜色 */
+}
+
+/* 下划线文字的样式 */
+.underline {
+    text-decoration: underline;
+    color: #0c4f4e; /* 可以根据喜好更改颜色 */
+    font-weight: bold; /* 可以根据喜好更改字体粗细 */
+}
+
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #0c4f4e;
+}
+
+.social-links img {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+@media (min-width: 1200px) {
+    .map-container iframe {
+        width: 100%;
+        height: 600px;
+    }
+}
+
+@media (max-width: 1199px) {
+    .map-container iframe {
+        width: 100%;
+        height: 450px;
+    }
+}
+
+@media (max-width: 767px) {
+    .map-container iframe {
+        width: 100%;
+        height: 300px;
+    }
+}
