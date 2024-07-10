@@ -1,4 +1,9 @@
 /* 基本设置 */
+
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -19,12 +24,14 @@ header {
     font-size: 1rem;
     font-weight: bold;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    max-width: 100%;
 }
 
 /* 主要内容样式 */
 main {
     flex: 1; /* 使main部分撑开剩余空间 */
     padding: 1rem;
+    max-width: 100%;
 }
 
 /* 固定位置的注册按钮样式 */
@@ -269,6 +276,7 @@ footer {
     padding: 1rem;
     position: relative;
     width: 100%;
+    max-width: 100%;
 }
 
 .social-media h2 {
